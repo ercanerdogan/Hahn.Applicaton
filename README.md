@@ -2,7 +2,7 @@
 
 ## for Back-End
 
-Net 5.0 Rest Api Application 
+Net 5.0 Rest Api Application has been implemented using below technologies.
 
 - Swagger UI,
 - EF Core 5.0,
@@ -11,6 +11,8 @@ Net 5.0 Rest Api Application
 - UnitOfWork Pattern,
 - Auto MapperFluend Validation,
 - Serilog 
+
+You can test all API end-points by Swagger UI. In that UI has added enough information to using endpoints.
 
 
 ## for Front-End
