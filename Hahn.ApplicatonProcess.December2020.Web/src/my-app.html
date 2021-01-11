@@ -1,0 +1,24 @@
+<import from="./components/applicant-item.html"></import>
+
+<div class="container spacer-v">
+    <form class="mb-4">
+        <h2 class="mb-3">Applicant List</h2>
+    </form>
+
+    <div if.bind="applicant && applicant.cod==='404'">
+        <h3>Error</h3>
+        <p>${applicant.message}</p>
+    </div>
+
+    <div class="col-md-12">
+        <div class="row">
+            <applicant-item data.bind="item" class="col-md-6 mb-4" repeat.for="item of applicant"></applicant-item>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-success">Add New</button>
+        </div>
+    </div>
+
+   
+
+</div>
