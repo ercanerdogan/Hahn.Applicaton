@@ -81,6 +81,7 @@ namespace Hahn.ApplicatonProcess.December2020.API
                     and if we want to add globally this option could set.*/
 
                     options.Filters.Add<ValidationFilter>();
+                    options.Filters.Add(new InterceptionAttribute());
 
                 })
                 .ConfigureApiBehaviorOptions(options =>
@@ -94,6 +95,7 @@ namespace Hahn.ApplicatonProcess.December2020.API
 
                         return new BadRequestObjectResult(context.ModelState);
                     };
+                    
                 })
                 .AddFluentValidation(options => options.RegisterValidatorsFromAssemblyContaining<Startup>()); //for using fluentValidator
 
