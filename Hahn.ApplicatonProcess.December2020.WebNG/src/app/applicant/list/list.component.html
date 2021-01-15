@@ -1,0 +1,58 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    (click)="addApplicantClick()" data-backdrop="static" data-keyboard="false">
+    Add New Applicant
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeClick()"></button>
+            </div>
+            <div class="modal-body">
+                <app-modify [applicantData]="applicantData" *ngIf="ActivateModifyComp"></app-modify>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Family Name</th>
+            <th>Address</th>
+            <th>Country</th>
+            <th>EmailAddress</th>
+            <th>Age</th>
+            <th>Hired Status</th>
+            <th>Commands</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of ApplicantList">
+            <td>{{dataItem.id}}</td>
+            <td>{{dataItem.name}}</td>
+            <td>{{dataItem.familyName}}</td>
+            <td>{{dataItem.address}}</td>
+            <td>{{dataItem.countyOfOrigin}}</td>
+            <td>{{dataItem.emailAddress}}</td>
+            <td>{{dataItem.age}}</td>
+            <td>{{dataItem.hired}}</td>
+            <td>
+                <button type="button" class="btn btn-warning mr-1" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    (click)="editApplicantClick(dataItem)" data-backdrop="static" data-keyboard="false">Edit</button>
+                <button type="button" class="btn btn-danger mr-1">Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
