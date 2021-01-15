@@ -17,7 +17,7 @@ export class SharedService {
   }
 
   getApplicant(val:any){
-    return this._http.get<any>(this.APIUrl+'/Applicants', val);
+    return this._http.get<any>(this.APIUrl+'/Applicants/'+val);
 
   }
 
@@ -31,7 +31,7 @@ export class SharedService {
   }
 
   deleteApplicant(val:any){
-    return this._http.delete(this.APIUrl+'/Applicants', val);
+    return this._http.delete(this.APIUrl+'/Applicants/'+val);
   }
 
 

@@ -42,7 +42,6 @@ export class ListComponent implements OnInit {
   }
 
   deleteApplicantClick(item) {
-    alert(item.id);
     if (confirm('Are you sure want to delete this applicant')) {
       this.service.deleteApplicant(item.id).subscribe(data=>{
         alert(data.toString());
